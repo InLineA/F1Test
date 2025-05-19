@@ -1,5 +1,5 @@
 /* eslint-disable semi */
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import {
     View,
     Text,
@@ -21,15 +21,15 @@ import { RootStackParamList } from '../types/types'
 
 const DriversScreen = () => {
     const dispatch = useDispatch<AppDispatch>()
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
-
     const { driversMap, loading, error, page, total, limit } = useSelector(
         (state: RootState) => state.drivers
     )
 
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
+
     const drivers = Object.values(driversMap)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         dispatch(fetchDrivers(0))
     }, [])
 

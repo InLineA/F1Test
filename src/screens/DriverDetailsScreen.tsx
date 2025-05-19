@@ -6,10 +6,6 @@ import { RootState, AppDispatch } from '../redux/store'
 import { RouteProp, NavigationProp } from '@react-navigation/native'
 import { RootStackParamList } from '../types/types'
 
-type DriverDetailsParamList = {
-    DriverDetails: { driverId: string };
-}
-
 type DriverDetailsProps = {
     route: RouteProp<RootStackParamList, 'DriverDetails'>
     navigation: NavigationProp<RootStackParamList, 'DriverDetails'>
